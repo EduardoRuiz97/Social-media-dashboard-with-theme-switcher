@@ -1,0 +1,348 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --LimeGreen: hsl(163, 72%, 41%);
+  --BrightRed: hsl(356, 69%, 56%);
+  
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(180deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+
+  /*----------Dark theme----------*/
+
+  --VeryDarkBlue-BG: hsl(230, 17%, 14%);
+  --VeryDarkBlue-Top-BG-Pattern: hsl(232, 19%, 15%);
+  --DarkDesaturatedBlue-Card-BG: hsl(228, 28%, 20%);
+  --DesaturatedBlue-Text: hsl(228, 34%, 66%);
+  --White-Text: hsl(0, 0%, 100%);
+
+  /*----------Light theme----------*/
+
+  --White-BG: hsl(0, 0%, 100%);
+  --VeryPaleBlue-Top-BG-Pattern: hsl(225, 100%, 98%);
+  --LightGrayishBlue-Card-BG: hsl(227, 47%, 96%);
+  --DarkGrayishBlue-Text: hsl(228, 12%, 44%);
+  --VeryDarkBlue-Text: hsl(230, 17%, 14%);
+
+}
+
+body{
+  font-size: 14px;
+  background-color: var(--White-BG);
+}
+
+body.dark {
+  background-color: var(--VeryDarkBlue-BG);
+}
+
+body.dark h1 {
+  color: var(--White-Text);
+}
+
+body.dark p {
+  color: var(--DesaturatedBlue-Text);
+}
+
+body.dark .container__data {
+  background-color: var(--DarkDesaturatedBlue-Card-BG);
+}
+
+body.dark .stats__box {
+  background-color: var(--DarkDesaturatedBlue-Card-BG);
+}
+
+body.dark .switch {
+  background-image: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+
+
+header {
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__text__container, .dark__mode {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header__text__container {
+  border-bottom: 1px solid var(--DarkGrayishBlue-Text)
+}
+
+.main__title {
+  font-size: 1.4em;
+  color: var(--VeryDarkBlue-Text);
+}
+
+.main__subtitle {
+  color: var(--DarkGrayishBlue-Text);
+  font-size: 0.95em;
+}
+
+/*-----------toggle switch---------*/
+
+.dark__mode {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle__label {
+  color: var(--DarkGrayishBlue-Text);
+  font-size: 0.95em;
+  font-weight: 700;
+}
+
+.switch {
+  border-radius: 10px;
+  width: 50px;
+  height: 22px;
+  display: block;
+  background-color: hsl(230, 22%, 74%);
+  position: relative;
+}
+
+.switch >input  {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider__round {
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  transition: 0.3s;
+}
+
+.switch >input:checked + .slider__round {
+  transform: translateX(28px);
+}
+
+/*----------main-------------*/
+
+main {
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.main__first__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75em;
+  width: 100%;
+}
+
+.first__section__stats__container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  min-height: 225px;
+  justify-content: flex-end;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container__data {
+  width: 100%;
+  height: 98%;
+  padding: 30px;
+  text-align: center;
+  background-color: var(--LightGrayishBlue-Card-BG);
+  transition: 0.3s ease-in;
+}
+
+#facebook {
+  background-color: var(--Facebook);
+  z-index: 0;
+}
+
+#twitter {
+  background-color: var(--Twitter);
+}
+
+#instagram {
+  border-top: 5px;
+  background-image: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%)); 
+}
+
+#youtube {
+  background-color: var(--YouTube);
+}
+
+.profile__name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5em;
+  font-size: 0.8em;
+  color: var(--DarkGrayishBlue-Text);
+  font-weight: 700;
+}
+
+.media__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.followers__number {
+  font-size: 2.8em;
+  color: var(--VeryDarkBlue-Text);
+  font-weight: 700;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+}
+
+.followers__label {
+  font-weight: 300;
+  color: var(--DarkGrayishBlue-Text);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.balance {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+#icon__up {
+  color: var(--LimeGreen);
+}
+
+#icon__down {
+  color: var(--BrightRed);
+}
+
+.main__second__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75em;
+}
+
+.second__section__title {
+  font-size: 1.5em;
+  color: var(--DarkGrayishBlue-Text);
+  font-weight: 700;
+}
+
+.second__section__stats__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75em;
+
+}
+
+.stats__box {
+  width: 100%;
+  padding: 30px 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1em;
+  background-color: var(--LightGrayishBlue-Card-BG);
+  border-radius: 5px;
+  transition: 0.3s ease-in;
+}
+
+.stats__box__page {
+  font-size: 0.8em;
+  color: var(--DarkGrayishBlue-Text);
+  font-weight: 700;
+}
+
+.stats__box__value {
+  font-size: 1.8em;
+  color: var(--DarkGrayishBlue-Text);
+  font-weight: 700;
+}
+
+.stats__box__sotial__icon, .stats__box__porcentage {
+  margin-left: auto;
+  margin-top: auto;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (min-width: 777px) {
+  header {
+    width: 85%;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header__text__container {
+    border: none;
+  }
+
+  .dark__mode {
+    gap: 1em;
+  }
+
+  main {
+    width: 85%;
+    margin: auto;
+  }
+  .main__first__section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  .second__section__stats__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
+@media only screen and (min-width: 1000px) {
+
+  .main__first__section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+  }
+
+  .second__section__stats__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
